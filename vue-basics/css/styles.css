@@ -1,0 +1,31 @@
+nav {
+    height: 70px;
+    width: auto;
+    background-color: #c7dbff;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+ul {
+
+    list-style: disc;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    display: block;
+    margin: 0 10px;
+}
+
+a {
+    color: #1b1223;
+}
+
+body {
+    color: #006c5b;
+    background-color: #eff2ff;
+
+}
