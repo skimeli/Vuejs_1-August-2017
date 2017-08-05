@@ -4,67 +4,115 @@
     <meta charset="utf-8">
     <title>vue-basics</title>
     <link rel="stylesheet" href="./css/styles.css">
+
 </head>
 <body>
-<nav>
-    <a href="#">Home</a> |
-    <a href="#">Book salon salonist</a> |
-    <a href="#">about us</a> |
-    <a href="#">contact us</a>
-</nav>
-<p></p>
-<p></p>
-
 <div id="app">
-    <img src="src/assets/img/h9.jpeg">
-    {{ name }}
-    <p>message: {{ message }}</p>
-    <p>reversed message: "{{ reversedMessage }}"</p>
-    <!--props-->
 
-    <!--user input-->
-    <input v-model="message1">
-    <p><b> Just for fun: </b>{{ message1 }}</p>
-    <!--List-->
-    <p><b>Hairstyles available</b></p>
-    <ul>
-        <li v-for="style in styles" v-text="style"></li>
-    </ul>
-    <br>
+    <main-section> </main-section>
+    <!--<body-section> </body-section>-->
 
-    <input @keyup.enter="addStyles" id="input" type="text" v-model="addList">
-    <button @click="addStyles">Add Style</button>
-    </br>
+    <!--<img src="src/assets/img/h9.jpeg">-->
+    <!--{{ name }}-->
+
+    <!--<app-child>-->
+    <!--&lt;!&ndash;user input&ndash;&gt;-->
+    <!--<br> <input v-model="message1">-->
+    <!--<p><b> Just for fun: </b>{{ message1 }}</p>-->
+    <!--</app-child>-->
+    <!--<app-child>-->
+    <!--&lt;!&ndash;List&ndash;&gt;-->
+    <!--<p><b>Hairstyles available</b></p>-->
+    <!--<ul>-->
+        <!--<li v-for="style in styles" v-text="style"></li>-->
+    <!--</ul>-->
+    <!--<br>-->
+
+    <!--<input @keyup.enter="addStyles" id="input" type="text" v-model="addList">-->
+    <!--<button @click="addStyles">Add Style</button>-->
+    <!--</br>-->
+    <!--</app-child>-->
     <!--checkbox-->
-    <P><b>Choose to book our services</b></P>
-    <input type="checkbox" id="manicure" value="Manicure" v-model="checkedNames">
-    <label for="manicure">Manicure and Pedicure</label>
-    <input type="checkbox" id="plait" value="plait" v-model="checkedNames">
-    <label for="plait">Hair styling and plaiting</label>
-    <br>
-    <span>Your booked services: {{ checkedNames }}</span>
-    <!--Radio-->
-    <p><b>Book the time</b></p>
-    <input type="radio" id="morning" value="8:00am-11:00am" v-model="booked">
-    <label for="morning">Morning</label>
-    <br>
-    <input type="radio" id="midmorning" value="11.00am-1.00pm" v-model="booked">
-    <label for="midmorning">Midmorning</label>
-    <br>
-    <input type="radio" id="afternoon" value="1.00pm-3.00pm" v-model="booked">
-    <label for="afternoon">afternoon</label>
-    <br>
-    <input type="radio" id="evening" value="3.00pm-6.00pm" v-model="booked">
-    <label for="evening">Evening</label><br>
-    <span>Time booked: {{booked}}</span><br>
-    <!--props and components-->
+    <!--<P><b>Choose to book our services</b></P>-->
+    <!--<input type="checkbox" id="manicure" value="Manicure" v-model="checkedNames">-->
+    <!--<label for="manicure">Manicure and Pedicure</label>-->
+    <!--<input type="checkbox" id="plait" value="plait" v-model="checkedNames">-->
+    <!--<label for="plait">Hair styling and plaiting</label>-->
+    <!--<br>-->
+    <!--<span>Your booked services: {{ checkedNames }}</span>-->
+    <!--&lt;!&ndash;Radio&ndash;&gt;-->
+    <!--<p><b>Book the time</b></p>-->
+    <!--<input type="radio" id="morning" value="8:00am-11:00am" v-model="booked">-->
+    <!--<label for="morning">Morning</label>-->
+    <!--<br>-->
+    <!--<input type="radio" id="midmorning" value="11.00am-1.00pm" v-model="booked">-->
+    <!--<label for="midmorning">Midmorning</label>-->
+    <!--<br>-->
+    <!--<input type="radio" id="afternoon" value="1.00pm-3.00pm" v-model="booked">-->
+    <!--<label for="afternoon">afternoon</label>-->
+    <!--<br>-->
+    <!--<input type="radio" id="evening" value="3.00pm-6.00pm" v-model="booked">-->
+    <!--<label for="evening">Evening</label><br>-->
+    <!--<span>Time booked: {{booked}}</span><br>-->
+    <!--<template id="my-comp">-->
+        <!--<div><br>-->
+            <!--<label for="">Type the name of your salonist-->
+            <!--</label>-->
+            <!--<input type="text" v-model="searchQuery"> {{searchQuery}}-->
+            <!--<p v-if="isSearching">Searching...</p>-->
+            <!--<div v-else>-->
+                <!--&lt;!&ndash;<div v-bind:class="{'searchQuery': searchQuery}">&ndash;&gt;-->
+                <!--<ol>-->
+                    <!--<li v-for="result in results">{{ result }}</li>-->
+                <!--</ol>-->
+                <!--</div>-->
+            <!--</div>-->
 
-    <child message="hello sharon,im a child in component!"></child>
+    <!--</template>-->
+    <!--<app-child>-->
+    <!--total cost using computed property-->
+    <!--<p v-for="Amount in amount">-->
+        <!--<label for="">Label</label>-->
+        <!--<input v-model="Amount.cost">-->
+    <!--</p>-->
+    <!--<p><b>Total cost is: {{ totalCost }}</b></p>-->
+    <!--<p><b>Please leave a comment</b></p>-->
+    <!--<ul>-->
+        <!--<li-->
+                <!--is="individual-comment"-->
+                <!--v-for="comment in comments"-->
+                <!--v-bind:commentpost="comment"-->
+        <!--&gt;</li>-->
+    <!--</ul>-->
+    <!--<input-->
+            <!--v-model="newComment"-->
+            <!--v-on:keyup.enter="addComment"-->
+            <!--placeholder="Add a comment"-->
+    <!--&gt;-->
+    <!--</app-child>-->
+    <!--<p>{{ thankyouCustomer }}</p>-->
+    <!--<click-thankyou @thankyou="gratitude"></click-thankyou><br>-->
+
+
+
+    <!--<hairstyle>-->
+
+
+    <!--</hairstyle>-->
 
 </div>
-<!-- built files will be auto injected -->
 
+
+<individual-comment :commentpost="sample comment"></individual-comment>
+
+<!--<script type="text/x-template" id="childarea">-->
+    <!--&lt;!&ndash;<div class="child">&ndash;&gt;-->
+        <!--<slot></slot>-->
+
+    <!--</div>-->
+<!--</script>-->
 <script src="./bundle.js"></script>
+
 </body>
 
 </html>

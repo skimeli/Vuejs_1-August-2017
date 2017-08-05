@@ -1,13 +1,12 @@
 <template>
   <div>
-    <router-view>
-
-    </router-view>
+    <div>
+        <p>i am the footer</p>
+      </div>
   </div>
 </template>
 
 <script>
-
 export default {
 
 }
